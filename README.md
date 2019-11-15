@@ -3,6 +3,30 @@
 
 Overview
 ---
+
+Aim of the project is to create convolutional neural network for traffic signs classification. Target accuracy of the net on the validation part of the dataset is > 93%.
+
+
+Dataset summary
+---
+In this project [German Traffic Sign Dataset](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset) is used. This dataset consit of the 32x32 pix images of the sings of the 43 classes.
+here is the example of each class.
+![dataset overview](./pictures/datasetExamplesImgs.png)
+
+Images in dataset are very low resolution and poor contrast. It is very challenging for me to recognize signs on some of the images. Also dataset is very unbalanced.
+here is the image of the classed distribution.
+![classes distribution](./pictures/classesDisturb.png)
+
+
+Design and Test a Model Architecture
+---
+
+In **preprocessing** the images I use only normalization. I also try to apply Contrast Limited Adaptive Histogram Equalization (CLAHE) method but it didn't work for me. If I used it in my code network immidiately stops learning, speed of learning procces significantly reduse and validation loss almost didn't change.
+
+I started searching ideal **model architecture** from the LeNet. It  has 0.9413 validation accuracy with hyperparameters batch size 64 epoch 30 lerning rate 0.001 and I started to improve it. Fir
+
+
+
 In this project, you will use what you've learned about deep neural networks and convolutional neural networks to classify traffic signs. You will train and validate a model so it can classify traffic sign images using the [German Traffic Sign Dataset](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset). After the model is trained, you will then try out your model on images of German traffic signs that you find on the web.
 
 We have included an Ipython notebook that contains further instructions 
