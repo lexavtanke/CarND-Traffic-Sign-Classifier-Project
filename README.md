@@ -53,16 +53,42 @@ Here is the table of the model architecture which I try and their hyperparameter
 |LeNet, first conv layer depth 12, second conv layer depth 32, relu activation all layers, output softmax activation, batch normalization all layers, weighted classes | 64 | 30 |0.001|0.9669|
 |LeNet, first conv layer depth 12, second conv layer depth 32, relu activation all layers, output softmax activation, batch normalization all layers, weighted classes| 64 | 29 | 0.001 |0.9728|
 |LeNet, first conv layer depth 12, second conv layer depth 32, relu activation all layers, output softmax activation, batch normalization all layers, weighted classes| 64 | 29 | 0.002 |0.9766|
-|LeNet, first conv layer depth 12, second conv layer depth 32, relu activation all layers, output softmax activation, batch normalization all layers, weighted classes| 64 | 29 | 0.002 |0.9766|
+
+ **Final Model Architecture**
  
+| layer | output |
+|-------|--------|
+| 1x1 convolution stride 1 valid padding relu activation| 28x28x3|
+| 5x5 convolution stride 1 valid padding relu activation| 28x28x12|
+| 2x2 max pooling strine 2 valid padding | 14x14x12 |
+| 5x5 convolution stride 1 valid padding relu activation| 10x10x32|
+| 2x2 max pooling strine 2 valid padding | 5x5x32|
+| flatten | 400 |
+| fully connected relu activation | 120 |
+| fully connected relu activation | 84 |
+| fully connected softmax activation | 43 |
 
-data augmentation:
- rotation 10 deg
- zoom range 0.15
-width and height shift 0.1
-shear range 0.15
+| types of data augmentation | boundaries |
+|---|---|
+| rotation | 10 deg|
+| zoom range | 0.15|
+| width and height shift | 0.1 |
+| shear range | 0.15 |
+
+Final **model was trained** for 29 epoch with Adam optimizer, inintial learning rate 0.002, decay is init LR / (NUM_EPOCHS * 0.5)  
+
+**solution approach**
 
 
+Test a Model on New Images
+---
+
+examples of **New images**
+
+performance on new images
+
+
+model certainty Softmax Probabilities
 
 In this project, you will use what you've learned about deep neural networks and convolutional neural networks to classify traffic signs. You will train and validate a model so it can classify traffic sign images using the [German Traffic Sign Dataset](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset). After the model is trained, you will then try out your model on images of German traffic signs that you find on the web.
 
