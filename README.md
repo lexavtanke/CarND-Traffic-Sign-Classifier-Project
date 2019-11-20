@@ -9,21 +9,24 @@ Aim of the project is to create convolutional neural network for traffic signs c
 
 Dataset summary
 ---
-In this project [German Traffic Sign Dataset](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset) is used. This dataset consit of the 32x32 pix color images of the sings of the 43 classes. Trainig part consists of the 347999 images, valuation part - 4410 images, test - 12630 images. Image data shape = (32, 32, 3).
+In this project [German Traffic Sign Dataset](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset) is used. 
+This dataset consits of the 32x32 pix color images of the signs of the 43 classes.
+Trainig part consists of the 347999 images, valuation part - 4410 images, test - 12630 images.
+Image data shape = (32, 32, 3).
 
-Here is the example of each class.
+Here is the example of each class:
 ![dataset overview](./pictures/datasetExamplesImgs.png)
 
 Images in dataset are very low resolution and poor contrast. It is very challenging for me to recognize signs on some of the images. Also dataset is very unbalanced.
 
-Here is the image of the classes distribution.
+Here is the image of the classes distribution:
 ![classes distribution](./pictures/classesDisturb.png)
 
 
 Design and Test a Model Architecture
 ---
 
-In **preprocessing** the images I use only normalization. I also try to apply Contrast Limited Adaptive Histogram Equalization (CLAHE) method but it didn't work for me. If I used it in my code network immidiately stops learning, speed of learning procces significantly reduse and validation loss almost didn't change.
+In **preprocessing** the images I use only normalization, I try different ones from -1 to 1 and from 0 to 1 and the socond works better for me. I also try to apply Contrast Limited Adaptive Histogram Equalization (CLAHE) method but it didn't work for me. If I used it in my code network immidiately stops learning, speed of learning procces significantly reduse and validation loss almost didn't change.
 
 I started searching ideal **model architecture** from the  standart LeNet. 
 
@@ -39,7 +42,7 @@ I started searching ideal **model architecture** from the  standart LeNet.
 | fully connected softmax activation | 43 |
 
 It  has 0.9413 validation accuracy with hyperparameters batch size 64 epoch 30 lerning rate 0.001 and I started to improve it. 
-Here is the table of the model architecture which I try and their hyperparameters.
+Here is the table of the model architecture which I try and their hyperparameters:
 
 |  model description | batch size | n epoch | learn rate | validation accuracy |
 |--------------------|------------|---------|------------|---------------------|
@@ -81,7 +84,7 @@ Here is plot of the training loss and accuracy on dataset:
 It has test loss: 0.12967856430632202 and test accuracy: 0.9604117274284363
 
 **solution approach**
-
+To improve my baseline LeNet Model I use data augmentation, and also I increase number of parameters on convolution layers from 6 kernels to 12 on first layer, and from 16 to 32 kerners on second. I also add 1 on 1 convolution with 3 kernels to encode new colorspace if network need it. 
 
 Test a Model on New Images
 ---
