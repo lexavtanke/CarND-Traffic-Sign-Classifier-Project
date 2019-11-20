@@ -9,9 +9,9 @@ Aim of the project is to create convolutional neural network for traffic signs c
 
 Dataset summary
 ---
-In this project [German Traffic Sign Dataset](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset) is used. 
-This dataset consits of the 32x32 pix color images of the signs of the 43 classes.
-Trainig part consists of the 347999 images, valuation part - 4410 images, test - 12630 images.
+In this project [German Traffic Sign Dataset](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset) is used.  
+This dataset consits of the 32x32 pix color images of the signs of the 43 classes.  
+Trainig part consists of the 347999 images, valuation part - 4410 images, test - 12630 images.  
 Image data shape = (32, 32, 3).
 
 Here is the example of each class:
@@ -42,6 +42,7 @@ I started searching ideal **model architecture** from the  standart LeNet.
 | fully connected softmax activation | 43 |
 
 It  has 0.9413 validation accuracy with hyperparameters batch size 64 epoch 30 lerning rate 0.001 and I started to improve it. 
+
 Here is the table of the model architecture which I try and their hyperparameters:
 
 |  model description | batch size | n epoch | learn rate | validation accuracy |
