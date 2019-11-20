@@ -96,6 +96,7 @@ Here is class prediction of my model for each new image:
 ![newPredict](./pictures/NewImagesPrediction.png)
 
 
-model certainty Softmax Probabilities
+model certainty Softmax Probabilities on new images
+![softmax](./pictures/softmax.png)
 
 
